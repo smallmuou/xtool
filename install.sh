@@ -1,5 +1,7 @@
 #/bin/sh
 
+git submodule update --init --recursive
+
 CUR_DIR=$(pwd)
 BASH_PROFILE=$HOME/.bash_profile
 
