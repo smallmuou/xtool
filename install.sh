@@ -1,43 +1,54 @@
-#/bin/sh
+#!/bin/sh
+#
+# Copyright (C) 2014 Wenva <lvyexuwenfa100@126.com>
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is furnished
+# to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
 
-git submodule update --init --recursive
+set -e
 
-CUR_DIR=$(pwd)
+FIRST_INSTALL=$HOME/.first_xtool
+DIRNAME=$(dirname $0)
 BASH_PROFILE=$HOME/.bash_profile
+CUR_PATH=`pwd`
 
-function isMacOS() 
-{
-    if [ "Darwin"=$(uname -s) ];then 
-        return 1
-    else 
-        return 0
-    fi
-}
-
-# create link
-rm -rf $HOME/.vimrc
-rm -rf $HOME/.vim
-ln -s $CUR_DIR/vimrc $HOME/.vimrc
-ln -s $CUR_DIR/vim $HOME/.vim
-
-# import tag to .bash_profile
-tag="alias tag='$CUR_DIR/gen_tag.sh'"
-untag="alias untag='find ./ -name \"tags\" -o -name \"cscope.*\"|xargs rm'"
-ipa="alias ipa='$CUR_DIR/gen_ipa.sh'"
-git="alias gg='$CUR_DIR/git.sh'"
-
-# MacOS Preferences
-if [ $(isMacOS)=1 ]; then
-echo 'export CLICOLOR=1' >> $BASH_PROFILE
-echo 'export LSCOLORS=gxfxaxdxcxegedabagacad' >> $BASH_PROFILE
+# check whether run in xtool directory
+if [ "$DIRNAME" != "." ] && [ "$DIRNAME" != ""  ]; then
+	echo "Please run me in xtool root directory."
 fi
 
-echo '#tag generate & clear; For read source code' >> $BASH_PROFILE
-echo $tag >> $BASH_PROFILE
-echo $untag >> $BASH_PROFILE
-echo $ipa >> $BASH_PROFILE
-echo $git >> $BASH_PROFILE
+# check whether first install
+if [ -e	"$FIRST_INSTALL"  ]; then
+	echo "The xtool is already installed."
+	exit -1
+fi
 
+# ----------------------- main -------------------------------
+git submodule update --init --recursive
+
+# vim link
+rm -rf $HOME/.vimrc
+rm -rf $HOME/.vim
+ln -s $CUR_PATH/vimrc $HOME/.vimrc
+ln -s $CUR_PATH/vim $HOME/.vim
+
+# write to bash profile
+echo "export XTOOL=$CUR_PATH" >> $BASH_PROFILE
+echo ". $CUR_PATH/bash_profile" >> $BASH_PROFILE
+touch $FIRST_INSTALL
 source $BASH_PROFILE
-
-
