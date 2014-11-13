@@ -100,26 +100,20 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " UI Additions
-Bundle 'w0ng/vim-hybrid'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'w0ng/vim-hybrid'
+Bundle 'tomasr/molokai'
+"Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 if executable('ctags')
     Bundle 'majutsushi/tagbar'
 endif
 
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Shougo/neocomplcache'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'honza/vim-snippets'
-Bundle 'vim-scripts/vimwiki'
 Bundle 'corntrace/bufexplorer'
 Bundle 'uguu-org/vim-matrix-screensaver'
-Bundle 'mattn/zencoding-vim'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/cscope.vim'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'yodiaditya/vim-pydjango'
 
 " Local bundles if avaiable
 if filereadable(expand("~/.vimrc.bundles.local"))
@@ -249,7 +243,7 @@ set background=dark " Set background
 if !has('gui_running')
     set t_Co=256 " Use 256 colors
 endif
-colorscheme hybrid " Load a colorscheme
+colorscheme molokai " Load a colorscheme
 
 " Set extra options when running in GUI mode
 if has("gui_running")
