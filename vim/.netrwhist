@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/starnet/xtool'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/starnet/Projects/linphone-iphone/submodules/build-i386-apple-darwin/linphone/mediastreamer2/tester'
+let g:netrw_dirhist_2='/Users/starnet/Projects/linphone-iphone/submodules'
+let g:netrw_dirhist_3='/Users/starnet/Projects/linphone-iphone/submodules/belle-sip'
+let g:netrw_dirhist_4='/Users/starnet/Projects/linphone-iphone/submodules/externals/x264'
+let g:netrw_dirhist_5='/Users/starnet/Projects/linphone-iphone/submodules/belle-sip'

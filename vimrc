@@ -102,7 +102,7 @@ Bundle 'gmarik/vundle'
 " UI Additions
 "Bundle 'w0ng/vim-hybrid'
 Bundle 'tomasr/molokai'
-"Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 if executable('ctags')
     Bundle 'majutsushi/tagbar'
@@ -114,6 +114,12 @@ Bundle 'uguu-org/vim-matrix-screensaver'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/cscope.vim'
+Bundle 'endel/vim-github-colorscheme'
+Bundle 'fugalh/desert.vim'
+Bundle 'vim-scripts/blackdust.vim'
+Bundle 'zeis/vim-kolor'
+Bundle 'mileszs/ack.vim'
+Bundle 'tyok/nerdtree-ack'
 
 " Local bundles if avaiable
 if filereadable(expand("~/.vimrc.bundles.local"))
@@ -212,7 +218,7 @@ nnoremap <Leader>n :call ToggleRelativenumber()<CR>
 
 set formatoptions+=rnlmM " Optimize format options
 set wrap " Set wrap
-set textwidth=80 " Change text width
+"set textwidth=80 " Change text width
 set colorcolumn=+1 " Indicate text border
 "set list " Show these tabs and spaces and so on
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ " Change listchars
@@ -243,7 +249,11 @@ set background=dark " Set background
 if !has('gui_running')
     set t_Co=256 " Use 256 colors
 endif
-colorscheme molokai " Load a colorscheme
+"colorscheme molokai " Load a colorscheme
+"colorscheme github
+"colorscheme desert
+"colorscheme molokai
+colorscheme kolor
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -496,6 +506,8 @@ nmap z :r !pbpaste<cr><cr>
 
 "before paste input '@', so paste will no indent, must input '@' end paste 
 set pastetoggle=<F7>
+:map <F1> :set paste<CR>
+:map <F2> :set nopaste<CR>
 
 " delete space or tab
 nmap << 0dw
@@ -627,13 +639,15 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeDirArrows=1
-let NERDTreeIgnore=['\.pyc$','\.svn$','\.tmp$','\.bak$','\~$', 'cscope.*', 'tags$', '\.o$']
+let NERDTreeIgnore=['^\.','\.pyc$','\.svn$','\.tmp$','\.bak$','\~$', 'cscope.*', 'tags$', '\.o$']
 let g:nerdtree_tabs_open_on_gui_startup=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "--------------------------------------------------
 " => Tlist
+" ctrl+]  goto the function
+" ctrl+T  goback
 "--------------------------------------------------
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 let Tlist_Use_Right_Window=1
@@ -756,7 +770,7 @@ nmap cr  A<br><ESC>
 "--------------------------------------------------
 "" => Grep
 "--------------------------------------------------
-nmap <leader>g :Grep -r<cr><cr><cr>
+nmap <leader>g :Grep -r<cr><cr>.c<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

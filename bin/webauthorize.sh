@@ -22,7 +22,7 @@
 
 set -e
 
-VERSION=1.0.0
+VERSION=1.0.1
 
 info() {
      local green="\033[1;32m"
@@ -147,8 +147,9 @@ else #Login
 
     # 先尝试连接一次baidu，以保证成功率
     `curl www.baidu.com > /dev/null`
+    `curl -d "kind=toRedirection&urlBeforeLogin=&loginUrl=commonauth" "http://192.168.9.19/smp/webauthservlet" > /dev/null`
 
-    RESPONSE=`curl -d "kind=preLogin&userIp=$IP&nasIp=10.10.30.1&userId=$USERNAME&password=$PASSWORD" "http://192.168.9.19/smp/webauthservlet"`
+    RESPONSE=`curl -d "kind=preLogin&userIp=$IP&nasIp=192.168.19.2&userId=$USERNAME&password=$PASSWORD" "http://192.168.9.19/smp/webauthservlet"`
     if [ "$RESPONSE" == "" ]; then
         info "Authorize successed. Now you can access to Internet."
     else
