@@ -120,6 +120,7 @@ Bundle 'vim-scripts/blackdust.vim'
 Bundle 'zeis/vim-kolor'
 Bundle 'mileszs/ack.vim'
 Bundle 'tyok/nerdtree-ack'
+Bundle 'kien/ctrlp.vim'
 
 " Local bundles if avaiable
 if filereadable(expand("~/.vimrc.bundles.local"))

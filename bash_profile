@@ -19,6 +19,7 @@ alias pbcat='$XTOOL/bin/pbcat.sh'
 alias tag='$XTOOL/bin/tag.sh'
 alias grep='grep --color'
 alias qrdomain='echo "7ximmr.com1.z0.glb.clouddn.com"|pbcopy'
+alias yuedu='yuedu.sh'
 
 alias c='cat $XTOOL/license/license-c >>'
 alias py='cat $XTOOL/license/license-python >>'
