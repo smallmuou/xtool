@@ -106,8 +106,7 @@ regroup() {
 	rm -rf build
 }
 
-
-while getopts ":hvo:p:" OPTION
+while getopts "hvo:" OPTION
 do
      case $OPTION in
          h)
