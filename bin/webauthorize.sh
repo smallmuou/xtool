@@ -147,7 +147,6 @@ else #Login
 
     # 先尝试连接一次baidu，以保证成功率
     `curl www.baidu.com > /dev/null`
-    `curl -d "kind=toRedirection&urlBeforeLogin=&loginUrl=commonauth" "http://192.168.9.19/smp/webauthservlet" > /dev/null`
 
     RESPONSE=`curl -d "kind=preLogin&userIp=$IP&nasIp=192.168.19.2&userId=$USERNAME&password=$PASSWORD" "http://192.168.9.19/smp/webauthservlet"`
     if [ "$RESPONSE" == "" ]; then

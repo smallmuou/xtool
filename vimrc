@@ -46,7 +46,7 @@ let mapleader=','				" Change the mapleader
 let maplocalleader='\'				" Change the maplocalleader
 set timeoutlen=500				" Time to wait for a command
 "autocmd BufWritePost .vimrc source $MYVIMRC    " Source the vimrc file after saving it
-nnoremap <Leader>x :tabedit $MYVIMRC<CR>	" Fast edit the .vimrc file using ',x'
+nnoremap <Leader>v :tabedit $MYVIMRC<CR>	" Fast edit the .vimrc file using ',x'
 set autoread 	   	    			" Set autoread when a file is changed outside
 set autowrite 					" Write on make/shell commands
 set hidden 					" Turn on hidden"
@@ -634,7 +634,7 @@ command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
 "--------------------------------------------------
 
 nnoremap <Leader>d :NERDTreeTabsToggle<CR>
-nnoremap <Leader>f :NERDTreeFind<CR>
+"nnoremap <Leader>f :NERDTreeFind<CR>
 let NERDTreeChDirMode=2
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
@@ -769,10 +769,12 @@ nmap cr  A<br><ESC>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "--------------------------------------------------
-"" => Grep
+"" => grep
 "--------------------------------------------------
-nmap <leader>g :Grep -r<cr><cr>.c<cr>
-
+set grepprg=grep\ -nri\ --include=*.{c,cc,cpp,m,h,ac}
+nmap <leader>f :gr! 
+nmap <leader>c :cw <cr> 
+nmap <leader>x :cclose <cr> 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "--------------------------------------------------

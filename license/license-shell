@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright (C) 2014 Wenva <lvyexuwenfa100@126.com>
 # 
@@ -22,5 +22,34 @@
 
 set -e
 
+spushd() {
+     pushd "$1" 2>&1> /dev/null
+}
+
+spopd() {
+     popd 2>&1> /dev/null
+}
+
+info() {
+     local green="\033[1;32m"
+     local normal="\033[0m"
+     echo -e "[${green}INFO${normal}] $1"
+}
+
+error() {
+     local red="\033[1;31m"
+     local normal="\033[0m"
+     echo -e "[${red}ERROR${normal}] $1"
+}
+
+usage() {
+cat << EOF
+
+USAGE: $0 
+
+DESCRIPTION:
+
+EOF
+}
 
 
