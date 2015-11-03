@@ -20,6 +20,7 @@ make
 sudo make install</pre>
 
 * cscope - vim的代码阅读
+
 <pre>sudo brew install cscope</pre>
 
 
