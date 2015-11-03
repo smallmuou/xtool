@@ -7,7 +7,7 @@
 * brew － mac安装工具，类似ubuntu的apt-get
 
 <pre>
-curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C /usr/local
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 </pre>
 	
 * ctags - vim的代码阅读
