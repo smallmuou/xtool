@@ -7,8 +7,7 @@
 * brew － mac安装工具，类似ubuntu的apt-get
 
 <pre>
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-</pre>
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</pre>
 	
 * ctags - vim的代码阅读
 
@@ -18,8 +17,7 @@ tar -zxvf ctags-5.8.tar.gz
 cd ctags-5.8
 ./configure
 make
-sudo make install
-</pre>
+sudo make install</pre>
 
 * cscope - vim的代码阅读
 <pre>sudo brew install cscope</pre>
