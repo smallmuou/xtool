@@ -22,16 +22,13 @@ sudo make install
 </pre>
 
 * cscope - vim的代码阅读
-<pre>
-sudo brew install cscope
-</pre>
+<pre>sudo brew install cscope</pre>
 或者
 <pre>
 wget https://downloads.sourceforge.net/project/cscope/cscope/15.8a/cscope-15.8a.tar.gz 
 ./configure
 make
-sudo make install
-</pre>
+sudo make install</pre>
 	
 
 ## Install
