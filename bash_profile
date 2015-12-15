@@ -25,7 +25,7 @@ alias ios-uuid='system_profiler SPUSBDataType | sed -n  -e "/iPad/,/Extra/p" -e 
 
 alias c='cat $XTOOL/license/license-c >>'
 alias py='cat $XTOOL/license/license-python >>'
-alias sh='cat $XTOOL/license/license-shell >>'
+#alias sh='cat $XTOOL/license/license-shell >>'
 
 alias pj='cd ~/Projects'
 alias bin='cd $XTOOL/bin'
