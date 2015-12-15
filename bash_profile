@@ -23,9 +23,9 @@ alias qndomain='echo "http://7ximmr.com1.z0.glb.clouddn.com/"|pbcopy'
 alias yuedu='yuedu.sh'
 alias ios-uuid='system_profiler SPUSBDataType | sed -n  -e "/iPad/,/Extra/p" -e "/iPhone/,/Extra/p"'
 
-alias c='cat $XTOOL/license/license-c >>'
-alias py='cat $XTOOL/license/license-python >>'
-#alias sh='cat $XTOOL/license/license-shell >>'
+alias fc='cat $XTOOL/license/license-c >>'
+alias fpy='cat $XTOOL/license/license-python >>'
+alias fsh='cat $XTOOL/license/license-shell >>'
 
 alias pj='cd ~/Projects'
 alias bin='cd $XTOOL/bin'
