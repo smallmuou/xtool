@@ -202,9 +202,6 @@ set sidescrolloff=10 " Minimal number of screen columns to keep away from cursor
 
 set showmatch " Show matching brackets/parenthesis
 set matchtime=2 " Decrease the time to blink
-" Use Tab instead of % to switch using matchit
-nmap <Tab> %
-vmap <Tab> %
 
 set number " Show line numbers
 " Toggle relativenumber
