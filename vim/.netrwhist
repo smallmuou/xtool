@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/starnet/evideo-voip-android/submodules/msopenh264/src'
-let g:netrw_dirhist_2='/Users/starnet/linphone-iphone/submodules/mswebrtc/webrtc'
-let g:netrw_dirhist_3='/Users/starnet/Downloads/EVideoSpecs/Specs/PPAdvertisingView/1.0.0'
-let g:netrw_dirhist_4='/Users/starnet/Library/Developer/Xcode/DerivedData/weiju-ios-giqbrdggeweibwdiyhymhsmuxpel/Build/Products/Release-iphoneos/weiju-ios.app/_CodeSignature'
-let g:netrw_dirhist_5='/Users/starnet/xtool/bin'
-let g:netrw_dirhist_6='/Users/starnet/Projects/linphone-iphone/submodules/externals/libvpx/test'
-let g:netrw_dirhist_7='/Users/starnet/Projects/linphone-iphone/submodules/build/builders.d'
-let g:netrw_dirhist_8='/Users/starnet/Projects/linphone-iphone/submodules/build-armv7-apple-darwin.ios/linphone/mediastreamer2/src'
-let g:netrw_dirhist_9='/Users/starnet/Projects/linphone-iphone/liblinphone-sdk/armv7-apple-darwin.ios/lib/pkgconfig'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/starnet/Projects/evideo-voip-sdk-ios copy/EVideoVoipSDK.bundle/InCallViewController~iphone.nib'
+let g:netrw_dirhist_2='/Users/starnet/Downloads/wedsshujujinglingOK/data/Applications/softwind.app/PersonalViewController~iphone.nib'
+let g:netrw_dirhist_3='/Users/starnet/Projects/app-publisher'
+let g:netrw_dirhist_4='/Users/starnet/Projects/linphone-iphone/submodules/externals/srtp'
