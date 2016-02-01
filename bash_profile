@@ -21,7 +21,7 @@ alias untag='rm -rf cscope.* tags'
 alias grep='grep --color'
 alias qndomain='echo "http://7ximmr.com1.z0.glb.clouddn.com/"|pbcopy'
 alias yuedu='yuedu.sh'
-alias ios-uuid='system_profiler SPUSBDataType | sed -n  -e "/iPad/,/Extra/p" -e "/iPhone/,/Extra/p"'
+alias udid='system_profiler SPUSBDataType | sed -n  -e "/iPad/,/Extra/p" -e "/iPhone/,/Extra/p"'
 
 alias fc='cat $XTOOL/license/license-c >>'
 alias fpy='cat $XTOOL/license/license-python >>'
