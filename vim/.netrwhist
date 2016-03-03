@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/starnet/Projects/evideo-voip-sdk-ios copy/EVideoVoipSDK.bundle/InCallViewController~iphone.nib'
 let g:netrw_dirhist_2='/Users/starnet/Downloads/wedsshujujinglingOK/data/Applications/softwind.app/PersonalViewController~iphone.nib'
 let g:netrw_dirhist_3='/Users/starnet/Projects/app-publisher'
 let g:netrw_dirhist_4='/Users/starnet/Projects/linphone-iphone/submodules/externals/srtp'
+let g:netrw_dirhist_5='/Users/starnet/Projects/wenva.github.com/_site'
+let g:netrw_dirhist_6='/Users/starnet/Projects/linphone-iphone/submodules/mswebrtc'
+let g:netrw_dirhist_7='/Users/starnet/Projects/linphone-iphone/submodules/belle-sip'

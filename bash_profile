@@ -26,11 +26,15 @@ alias udid='system_profiler SPUSBDataType | sed -n  -e "/iPad/,/Extra/p" -e "/iP
 alias fc='cat $XTOOL/license/license-c >>'
 alias fpy='cat $XTOOL/license/license-python >>'
 alias fsh='cat $XTOOL/license/license-shell >>'
+alias weather='curl wttr.in'
 
 alias pj='cd ~/Projects'
 alias bin='cd $XTOOL/bin'
 alias md='cd ~/Markdown'
 alias dt='cd ~/Desktop'
+
+alias unrvi="udid|awk '/Serial Number/{print \$3}'|xargs rvictl -x"
+alias rvi="unrvi>/dev/null;udid|awk '/Serial Number/{print \$3}'|xargs rvictl -s"
 
 
 
