@@ -38,6 +38,23 @@ alias unrvi="udid|awk '/Serial Number/{print \$3}'|xargs rvictl -x"
 alias rvi="unrvi>/dev/null;udid|awk '/Serial Number/{print \$3}'|xargs rvictl -s"
 alias mou-catalog="pbcopy < $XTOOL/res/markdown-catalog"
 
+repeat() {
+    if [ $# -le 0 ];then
+        echo 'usage: repeat <count> <command>'
+        return 0;
+    fi
 
+    if [ "$1" == "n" ];then
+        n=100000000
+    else
+        n=$1    #gets the number of times the succeeding command needs to be executed
+    fi
+    echo $n
+    shift   #now $@ has the command that needs to be executed
+    while [ $(( n -= 1 )) -ge 0 ]    #loop n times;
+    do
+        "$@"    #execute the command; you can also add error handling here or parallelize the commands
+    done
+}
 
 
