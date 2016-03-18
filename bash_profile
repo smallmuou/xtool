@@ -22,6 +22,7 @@ alias grep='grep --color'
 alias qndomain='echo "http://7ximmr.com1.z0.glb.clouddn.com/"|pbcopy'
 alias yuedu='yuedu.sh'
 alias udid='system_profiler SPUSBDataType | sed -n  -e "/iPad/,/Extra/p" -e "/iPhone/,/Extra/p"'
+alias http='python -m SimpleHTTPServer'
 
 alias fc='cat $XTOOL/license/license-c >>'
 alias fpy='cat $XTOOL/license/license-python >>'
@@ -35,6 +36,7 @@ alias dt='cd ~/Desktop'
 
 alias unrvi="udid|awk '/Serial Number/{print \$3}'|xargs rvictl -x"
 alias rvi="unrvi>/dev/null;udid|awk '/Serial Number/{print \$3}'|xargs rvictl -s"
+alias mou-catalog="pbcopy < $XTOOL/res/markdown-catalog"
 
 
 
