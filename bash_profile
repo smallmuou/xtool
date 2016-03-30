@@ -63,11 +63,26 @@ repeat() {
 # $1 - username
 # $2 - password
 dhcp-list() {
+    if [ $# -le 1 ];then
+        echo "usage: dhcp-list <username> <password>"
+        return 0;
+    fi
+
+    username=$1
+    password=$2
+    auth="Basic `echo -n $username:$password|base64`"
     gw=`netstat -rn|awk '/default/{print $2}'`
+
     if [ -z "`curl -s $gw|awk '/document.cookie/{print $0}'`" ];then
-        curl -s --header "Authorization:Basic `echo -n $1:$2|base64`" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'
+        result=curl -s --header "Authorization:$auth" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'
     else
-       curl -s --header "Cookie:Authorization=Basic `echo -n $1:$2|base64`" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'
+       result=`curl -s --header "Cookie:Authorization=$auth" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'`
+    fi
+
+    if [ -z "$result" ];then
+        echo 'Please check the username and password.'
+    else 
+        echo "${result}"
     fi
 }
 
