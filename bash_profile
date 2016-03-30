@@ -36,7 +36,10 @@ alias dt='cd ~/Desktop'
 
 alias unrvi="udid|awk '/Serial Number/{print \$3}'|xargs rvictl -x"
 alias rvi="unrvi>/dev/null;udid|awk '/Serial Number/{print \$3}'|xargs rvictl -s"
+
+# markdown目录生成
 alias mou-catalog="pbcopy < $XTOOL/res/markdown-catalog"
+
 
 repeat() {
     if [ $# -le 0 ];then
@@ -55,6 +58,17 @@ repeat() {
     do
         "$@"    #execute the command; you can also add error handling here or parallelize the commands
     done
+}
+
+# $1 - username
+# $2 - password
+dhcp-list() {
+    gw=`netstat -rn|awk '/default/{print $2}'`
+    if [ -z "`curl -s $gw|awk '/document.cookie/{print $0}'`" ];then
+        curl -s --header "Authorization:Basic `echo -n $1:$2|base64`" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'
+    else
+       curl -s --header "Cookie:Authorization=Basic `echo -n $1:$2|base64`" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'
+    fi
 }
 
 
