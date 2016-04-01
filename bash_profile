@@ -74,7 +74,7 @@ dhcp-list() {
     gw=`netstat -rn|awk '/default/{print $2}'`
 
     if [ -z "`curl -s $gw|awk '/document.cookie/{print $0}'`" ];then
-        result=`curl -s --header "Authorization:$auth" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'`
+        result=curl -s --header "Authorization:$auth" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'
     else
        result=`curl -s --header "Cookie:Authorization=$auth" http://$gw/userRpm/AssignedIpAddrListRpm.htm|sed -n -e '/DHCPDynList =/,/0,0 )/p'|sed '1d;$d' |sed 's/"//g'|sed 's/,/ /g'`
     fi
@@ -82,7 +82,7 @@ dhcp-list() {
     if [ -z "$result" ];then
         echo 'Please check the username and password.'
     else 
-        echo "${result}"
+        echo "${result}"|awk '{printf $4"\t"$3"\t"$2"\t"$1"\n"}'
     fi
 }
 
