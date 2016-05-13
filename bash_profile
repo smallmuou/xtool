@@ -44,6 +44,9 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # markdown目录生成
 alias mou-catalog="pbcopy < $XTOOL/res/markdown-catalog"
 
+function dict {
+echo $*|awk '{print "open dict://"$0}'|sh
+}
 
 repeat() {
     if [ $# -le 0 ];then
