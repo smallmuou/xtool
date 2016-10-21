@@ -69,7 +69,7 @@ repeat() {
 
 # $1 - username
 # $2 - password
-dhcp-list() {
+function dhcplist() {
     if [ $# -le 1 ];then
         echo "usage: dhcp-list <username> <password>"
         return 0;
