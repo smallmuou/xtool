@@ -8,7 +8,7 @@ fi
 export PATH=$PATH:$XTOOL/bin
 
 # 修改终端行首内容
-export PS1="smallmuou:\W $ "
+export PS1="\u:\W $ "
 
 # alias 
 alias rm='rm -rf'
