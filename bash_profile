@@ -7,6 +7,9 @@ fi
 
 export PATH=$PATH:$XTOOL/bin
 
+# 修改终端行首内容
+export PS1="smallmuou:\W $ "
+
 # alias 
 alias rm='rm -rf'
 alias cp='cp -rf'
@@ -33,6 +36,7 @@ alias pj='cd ~/Projects'
 alias bin='cd $XTOOL/bin'
 alias md='cd ~/Markdown'
 alias dt='cd ~/Desktop'
+alias dw='cd ~/Downloads'
 
 alias unrvi="udid|awk '/Serial Number/{print \$3}'|xargs rvictl -x"
 alias rvi="unrvi>/dev/null;udid|awk '/Serial Number/{print \$3}'|xargs rvictl -s"
