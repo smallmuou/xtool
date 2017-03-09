@@ -503,9 +503,8 @@ vmap ys :w !pbcopy<cr><cr>
 nmap ps :r !pbpaste<cr><cr>
 
 "before paste input '@', so paste will no indent, must input '@' end paste 
-set pastetoggle=<F7>
-:map <F1> :set paste<CR>
-:map <F2> :set nopaste<CR>
+:map <leader>1 :set paste<CR>
+:map <leader>2 :set nopaste<CR>
 
 " delete space or tab
 nmap << 0dw

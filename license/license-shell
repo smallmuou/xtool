@@ -54,11 +54,27 @@ current_dir() {
 usage() {
 cat << EOF
 
-USAGE: $0 
+USAGE: $0 [-h]
 
 DESCRIPTION:
 
+OPTIONS:
+    -h                Show this help message and exit
+
 EOF
 }
+
+while getopts 'h' arg; do
+    case $arg in
+        h)
+            usage
+            exit;;
+        ?)
+            usage
+            exit;;
+    esac
+done
+
+shift $(($OPTIND - 1))
 
 
