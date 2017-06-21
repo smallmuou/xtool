@@ -3,6 +3,8 @@
 if [ "Darwin" = $(uname -s)  ]; then
 export CLICOLOR=1
 export LSCOLORS=gxfxaxdxcxegedabagacad
+alias keyboard-enable='sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
+alias keyboard-disable='sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/'
 fi
 
 export PATH=$PATH:$XTOOL/bin
