@@ -61,16 +61,17 @@ OPTIONS:
     -h                Show this help message and exit
 
 EOF
+exit 1
 }
 
 while getopts 'h' arg; do
     case $arg in
         h)
             usage
-            exit;;
+            ;;
         ?)
             usage
-            exit;;
+            ;;
     esac
 done
 
