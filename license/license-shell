@@ -53,10 +53,23 @@ curdir() {
     fi
 }
 
+
+#########################################
+###           GROBLE DEFINE           ###
+#########################################
+
+VERSION=1.0.0
+AUTHOR=smallmuou
+
+#########################################
+###             ARG PARSER            ###
+#########################################
+
 usage() {
 cat << EOF
+`basename $0` version $VERSION by $AUTHOR
 
-USAGE: $0 [-h]
+USAGE: `basename $0` [-h]
 
 DESCRIPTION:
 
@@ -66,10 +79,6 @@ OPTIONS:
 EOF
 exit 1
 }
-
-#########################################
-###             ARG PARSER            ###
-#########################################
 
 while getopts 'h' arg; do
     case $arg in

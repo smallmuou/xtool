@@ -29,9 +29,6 @@ alias yuedu='yuedu.sh'
 alias udid='system_profiler SPUSBDataType | sed -n  -e "/iPad/,/Extra/p" -e "/iPhone/,/Extra/p"'
 alias http='python -m SimpleHTTPServer'
 
-alias fc='cat $XTOOL/license/license-c >>'
-alias fpy='cat $XTOOL/license/license-python >>'
-alias fsh='cat $XTOOL/license/license-shell >>'
 alias weather='curl wttr.in'
 
 alias pj='cd ~/Projects'
@@ -49,6 +46,21 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 
 # markdown目录生成
 alias mou-catalog="pbcopy < $XTOOL/res/markdown-catalog"
+
+alias fc='cat $XTOOL/license/license-c >'
+
+fpy() {
+    [ $# != 1 ] && echo 'Usage: fpy filename' && return
+    touch $1
+    cat $XTOOL/license/license-python > $1
+}
+
+fsh() {
+    [ $# != 1 ] && echo 'Usage: fsh filename' && return
+    touch $1
+    cat $XTOOL/license/license-shell > $1
+    chmod +x $1
+}
 
 function dict {
 echo $*|awk '{print "open dict://"$0}'|sh
