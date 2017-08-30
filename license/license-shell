@@ -36,6 +36,10 @@ info() {
      echo -e "[${green}INFO${normal}] $1"
 }
 
+cmdcheck() {
+    command -v $1>/dev/null 2>&1 || { error >&2 "Please install command $1 first."; exit 1; }   
+}
+
 error() {
      local red="\033[1;31m"
      local normal="\033[0m"
