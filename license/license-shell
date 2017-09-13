@@ -73,7 +73,7 @@ usage() {
 cat << EOF
 `basename $0` version $VERSION by $AUTHOR
 
-USAGE: `basename $0` [-h]
+USAGE: `basename $0` [OPTIONS]
 
 DESCRIPTION:
 
