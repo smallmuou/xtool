@@ -41,8 +41,9 @@ alias unrvi="udid|awk '/Serial Number/{print \$3}'|xargs rvictl -x"
 alias rvi="unrvi>/dev/null;udid|awk '/Serial Number/{print \$3}'|xargs rvictl -s"
 
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
-
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+
+alias sum="awk '{sum += $1}END {print sum}'"
 
 # markdown目录生成
 alias mou-catalog="pbcopy < $XTOOL/res/markdown-catalog"
