@@ -50,6 +50,10 @@ alias mou-catalog="pbcopy < $XTOOL/res/markdown-catalog"
 
 alias fc='cat $XTOOL/license/license-c >'
 
+alert() {
+    title=yuedu;msg=hello;osascript -e  "display notification \"$2\" with title $1"
+}
+
 fpy() {
     [ $# != 1 ] && echo 'Usage: fpy filename' && return
     touch $1
