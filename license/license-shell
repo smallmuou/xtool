@@ -57,6 +57,9 @@ curdir() {
     fi
 }
 
+myos() {
+    echo `uname|tr "[:upper:]" "[:lower:]"`
+}
 
 #########################################
 ###           GROBLE DEFINE           ###
