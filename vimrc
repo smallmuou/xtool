@@ -518,7 +518,7 @@ map <leader>a ggVG
 map <leader>M :%s/\r//g<cr>
 
 " Fast Save & Quit
-nmap <leader>w :w!<cr>
+nmap <leader>w :w !sudo tee %<cr>
 nmap <leader>q :q<cr>
 
 
